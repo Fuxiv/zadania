@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <span id="link1"><a href="anothersite.html" ></a>123</span>
+    <a href="anothersite.html" id="link2"></a>
+    <a href="anothersite.html" id="link3"></a>
+    <a href="anothersite.html" id="link4"></a> -->
+    <div class="navContainer">
+        <nav>
+            <div class="li1" id="li">
+                <p>lllllllllllllllll</p>
+                <div class="after-container" id="a-c1">
+                    <ul class="after" id="myList1">
+                        <li id="a-li"><a href="anothersite.html"></a>11111</li>
+                        <li id="a-li"><a href="anothersite.html"></a>22222</li>
+                        <li id="a-li"><a href="anothersite.html"></a>33333</li>
+                        <li id="a-li"><a href="anothersite.html"></a>44444</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="li2" id="li">
+                <div class="after-container" id="a-c2">
+                    <ul class="after" id="myList2">
+                        <li id="a-li"><a href="anothersite.html"></a>11111</li>
+                        <li id="a-li"><a href="anothersite.html"></a>22222</li>
+                        <li id="a-li"><a href="anothersite.html"></a>33333</li>
+                        <li id="a-li"><a href="anothersite.html"></a>44444</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="li3" id="li">
+                <div class="after-container" id="a-c3">
+                    <ul class="after" id="myList3">
+                        <li id="a-li"><a href="anothersite.html"></a>11111</li>
+                        <li id="a-li"><a href="anothersite.html"></a>22222</li>
+                        <li id="a-li"><a href="anothersite.html"></a>33333</li>
+                        <li id="a-li"><a href="anothersite.html"></a>44444</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script>
+
+        $(document).ready( function(){
+            $('.li1').mouseenter(function(){
+                $('#a-c1').show();
+                $('#myList1').animate({
+                    height: '300px'
+                });
+            });
+            $('.li1').mouseleave(function(){
+                $('#myList1').animate({
+                    height: '0px'
+                });
+                setTimeout(() => {
+                    $('#a-c1').hide();
+                }, 400);
+            })
+                $('.li2').mouseenter(function(){
+                    $('#a-c2').show();
+                    $('#myList2').animate({
+                        height: '300px'
+                    });
+                });
+                $('.li2').mouseleave(function(){
+                    $('#myList2').animate({
+                        height: '0px'
+                    });
+                    setTimeout(() => {
+                        $('#a-c2').hide();
+                    }, 400);
+                })
+                     $('.li3').mouseenter(function(){
+                        $('#a-c3').show();
+                        $('#myList3').animate({
+                            height: '300px'
+                        });
+                    });
+                    $('.li3').mouseleave(function(){
+                        $.when($('#myList3').animate({
+                            height: '0px'
+                        })).done(function(){
+                            $('#a-c3').hide(-100);
+                        })
+                        
+                    })
+        })
+
+
+
+
+        // let link1=document.getElementById('link1')
+        // let link2=document.getElementById('link2')
+        // let link3=document.getElementById('link3')
+        // let link4=document.getElementById('link4')
+        // let data = [link1, link2, link3, link4];
+
+        // let list = document.getElementById("myList");
+
+        // data.forEach((item)=>{
+        //     let li = document.createElement("li");
+
+        //     list.appendChild(li);
+        // })
+    </script>
+</body>
+</html>
